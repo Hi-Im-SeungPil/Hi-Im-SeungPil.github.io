@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.hanpass.applinksample",
+    "sha256_cert_fingerprints":
+    ["4F:C3:F3:B5:6F:46:AE:80:8A:72:4A:6D:9E:1F:AF:D4:71:C4:8D:84:0E:9E:14:41:CC:09:E2:50:55:07:CD:C5"]
+  }
+}]
