@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Link Fallback</title>
+    <script>
+        // 페이지가 로드된 후, 앱이 설치되지 않았다면 Play Store로 리디렉션
+        window.onload = function() {
+            // 앱 링크 URL
+            const appLink = "https://hi-im-seungpil";
+            const playStoreLink = "https://play.google.com/store/apps/details?id=com.example.app";
+
+            // 2초 후에 리디렉션 시도 (앱이 설치되었는지 확인하는 방법)
+            setTimeout(function() {
+                // 앱이 설치되지 않은 경우 Play Store로 리디렉션
+                window.location.href = playStoreLink;
+            }, 2000);
+
+            // 앱 링크 열기 시도 (앱이 설치되어 있으면 앱이 열리게 됨)
+            window.location.href = appLink;
+        }
+    </script>
 </head>
 <body>
-  <p id = "version">2.0.1</p>
-  <hr>  
+    <h1>If the app is not installed, you'll be redirected to the Play Store.</h1>
 </body>
 </html>
