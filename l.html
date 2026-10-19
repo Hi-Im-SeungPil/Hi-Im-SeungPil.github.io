@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EasyPack</title>
+  <meta property="og:title" content="EasyPack 준비물 공유">
+  <meta property="og:description" content="EasyPack 에서 열면 바로 저장할 수 있어요.">
+  <style>
+    :root { --primary: #2F6FE0; --text: #191F28; --sub: #6B7684; --line: #E5E8EB; --bg: #FFFFFF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Noto Sans JP", "Noto Sans TC", sans-serif; }
+    main { max-width: 420px; margin: 0 auto; padding: 72px 24px 40px; text-align: center; }
+    .icon { width: 72px; height: 72px; border-radius: 20px; background: var(--primary); margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center; }
+    h1 { font-size: 22px; line-height: 1.4; margin: 0 0 8px; }
+    p { font-size: 15px; line-height: 1.6; color: var(--sub); margin: 0; }
+    .buttons { margin-top: 36px; display: flex; flex-direction: column; gap: 10px; }
+    a.button { display: block; height: 52px; line-height: 52px; border-radius: 12px; font-size: 16px; font-weight: 600;
+      text-decoration: none; }
+    a.primary { background: var(--primary); color: #fff; }
+    a.secondary { border: 1px solid var(--line); color: var(--text); }
+    .note { margin-top: 20px; font-size: 13px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="icon">
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+      <path d="M8.8 8.4V6.2a1.7 1.7 0 0 1 1.7-1.7h3a1.7 1.7 0 0 1 1.7 1.7v2.2"/>
+      <rect x="3.9" y="8.9" width="16.2" height="10.7" rx="2.8"/>
+    </svg>
+  </div>
+  <h1 id="title"></h1>
+  <p id="body"></p>
+  <div class="buttons">
+    <a id="open" class="button primary" href="#"></a>
+    <a id="install" class="button secondary" href="#"></a>
+  </div>
+  <p id="note" class="note"></p>
+</main>
+<script>
+  // 앱 정보. App Store 주소는 출시 후 채운다 (비어 있으면 iOS 에선 설치 버튼을 숨긴다).
+  var PACKAGE = 'com.jeonfeel.easypack';
+  var APP_SCHEME = 'com.jeonfeel.easypack';
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=' + PACKAGE;
+  var APP_STORE_URL = '';
+
+  var TEXTS = {
+    ko: { title: '준비물 목록을 받았어요', body: 'EasyPack 에서 열면 내 템플릿이나 체크리스트로 바로 저장할 수 있어요.',
+          open: 'EasyPack 에서 열기', install: '앱 설치하기', note: '링크는 보낸 뒤 1시간 동안만 열 수 있어요.',
+          invalid: '링크가 올바르지 않아요.' },
+    ja: { title: '持ち物リストが届きました', body: 'EasyPackで開くと、テンプレートやチェックリストとしてすぐ保存できます。',
+          open: 'EasyPackで開く', install: 'アプリをインストール', note: 'リンクは送信から1時間だけ有効です。',
+          invalid: 'リンクが正しくありません。' },
+    zhHant: { title: '收到一份行李清單', body: '用 EasyPack 開啟，就能直接存成範本或檢查清單。',
+          open: '用 EasyPack 開啟', install: '安裝 App', note: '連結在傳送後 1 小時內有效。',
+          invalid: '連結不正確。' },
+    en: { title: 'You got a packing list', body: 'Open it in EasyPack to save it as a template or checklist.',
+          open: 'Open in EasyPack', install: 'Get the app', note: 'Links work for 1 hour after they are sent.',
+          invalid: 'This link is not valid.' }
+  };
+
+  function pickTexts() {
+    var lang = (navigator.language || 'ko').toLowerCase();
+    if (lang.indexOf('ja') === 0) return TEXTS.ja;
+    if (lang.indexOf('zh') === 0) return TEXTS.zhHant;
+    if (lang.indexOf('ko') === 0) return TEXTS.ko;
+    return TEXTS.en;
+  }
+
+  var t = pickTexts();
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var code = (new URLSearchParams(location.search).get('c') || '').trim().toUpperCase();
+  var valid = /^[A-Z0-9]{4,12}$/.test(code);
+
+  document.getElementById('title').textContent = t.title;
+  document.getElementById('body').textContent = valid ? t.body : t.invalid;
+  document.getElementById('note').textContent = t.note;
+
+  var open = document.getElementById('open');
+  var install = document.getElementById('install');
+  open.textContent = t.open;
+  install.textContent = t.install;
+
+  // 링크로 앱이 안 열렸을 때(카톡 안 브라우저 등) 누르는 버튼. 안드로이드는 앱이 없으면 스토어로 간다.
+  if (!valid) {
+    open.classList.add('hidden');
+  } else if (isAndroid) {
+    open.href = 'intent://l?c=' + code + '#Intent;scheme=' + APP_SCHEME + ';package=' + PACKAGE +
+      ';S.browser_fallback_url=' + encodeURIComponent(PLAY_URL) + ';end';
+  } else {
+    open.href = APP_SCHEME + '://l?c=' + code;
+  }
+
+  if (isIOS) {
+    if (APP_STORE_URL) install.href = APP_STORE_URL; else install.classList.add('hidden');
+  } else {
+    install.href = PLAY_URL;
+  }
+</script>
+</body>
+</html>
