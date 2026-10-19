@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID.com.jeonfeel.easypack"],
+        "components": [
+          { "/": "/l", "comment": "준비물 공유 링크 (?c=코드)" }
+        ]
+      }
+    ]
+  }
+}
