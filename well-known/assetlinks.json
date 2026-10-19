@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jeonfeel.easypack",
+      "sha256_cert_fingerprints": [
+        "F3:BC:2A:FE:8C:E0:A0:CF:81:6B:77:F1:F1:A7:AA:77:5C:12:49:48:2A:2D:63:AD:7B:F6:FB:37:F9:35:11:5A"
+      ]
+    }
+  }
+]
