@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EasyPack — 여행 준비물 체크리스트</title>
+  <meta name="description" content="EasyPack is a travel packing checklist app: build a list for your destination, pack together with friends, and check entry requirements, exchange rates and weather.">
+  <meta property="og:title" content="EasyPack">
+  <meta property="og:description" content="여행 준비물, 빠뜨리지 않게. 여행지에 맞춘 체크리스트 · 같이 챙기기 · 입국 준비 · 환율.">
+  <meta name="theme-color" content="#2F6FE0">
+  <style>
+    :root {
+      --primary: #2F6FE0; --primary-soft: #EAF1FC; --text: #191F28; --sub: #6B7684;
+      --line: #E5E8EB; --bg: #FFFFFF; --bg-alt: #F7F8FA;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR",
+        "Hiragino Sans", "Noto Sans JP", "PingFang TC", "Noto Sans TC", "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; }
+    .logo { width: 36px; height: 36px; border-radius: 10px; background: var(--primary);
+      display: flex; align-items: center; justify-content: center; }
+    .langs { display: flex; gap: 4px; }
+    .langs button { border: 0; background: transparent; color: var(--sub); font: inherit; font-size: 13px;
+      padding: 6px 8px; border-radius: 8px; cursor: pointer; }
+    .langs button.on { background: var(--bg-alt); color: var(--text); font-weight: 700; }
+    .hero { padding: 48px 0 56px; text-align: center; }
+    .hero .icon { width: 88px; height: 88px; border-radius: 24px; background: var(--primary); margin: 0 auto 28px;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px rgba(47,111,224,.25); }
+    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.3; margin: 0 0 14px; letter-spacing: -0.02em; }
+    .lead { font-size: 17px; color: var(--sub); margin: 0 auto; max-width: 520px; }
+    .stores { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+    .store { display: inline-flex; align-items: center; gap: 8px; height: 52px; padding: 0 22px; border-radius: 14px;
+      font-weight: 700; font-size: 15px; text-decoration: none; }
+    .store.play { background: var(--text); color: #fff; }
+    .store.ios { background: var(--bg-alt); color: var(--sub); pointer-events: none; }
+    .features { background: var(--bg-alt); padding: 56px 0; }
+    .features h2 { text-align: center; font-size: 22px; margin: 0 0 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .card { background: #fff; border-radius: 18px; padding: 22px; }
+    .card .em { width: 44px; height: 44px; border-radius: 12px; background: var(--primary-soft);
+      display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--sub); font-size: 15px; }
+    .regions { padding: 48px 0; text-align: center; color: var(--sub); font-size: 15px; }
+    .regions strong { color: var(--text); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--sub); font-size: 13px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+            <path d="M8.8 8.4V6.2a1.7 1.7 0 0 1 1.7-1.7h3a1.7 1.7 0 0 1 1.7 1.7v2.2"/>
+            <rect x="3.9" y="8.9" width="16.2" height="10.7" rx="2.8"/>
+          </svg>
+        </div>
+        EasyPack
+      </div>
+      <div class="langs" id="langs">
+        <button data-lang="ko">한국어</button>
+        <button data-lang="ja">日本語</button>
+        <button data-lang="zhHant">繁中</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+          <path d="M8.8 8.4V6.2a1.7 1.7 0 0 1 1.7-1.7h3a1.7 1.7 0 0 1 1.7 1.7v2.2"/>
+          <rect x="3.9" y="8.9" width="16.2" height="10.7" rx="2.8"/>
+        </svg>
+      </div>
+      <h1 data-t="title"></h1>
+      <p class="lead" data-t="lead"></p>
+      <div class="stores">
+        <a class="store play" id="play" href="https://play.google.com/store/apps/details?id=com.jeonfeel.easypack">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4 2.8v18.4c0 .5.5.8.9.5l15.4-9.2a.6.6 0 0 0 0-1L4.9 2.3c-.4-.3-.9 0-.9.5z"/></svg>
+          Google Play
+        </a>
+        <span class="store ios" data-t="ios"></span>
+      </div>
+    </section>
+  </div>
+
+  <section class="features">
+    <div class="wrap">
+      <h2 data-t="featuresTitle"></h2>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="regions" data-t="regions"></p>
+    <footer>© EasyPack</footer>
+  </div>
+
+<script>
+  var TEXTS = {
+    ko: {
+      title: '여행 준비물, 빠뜨리지 않게',
+      lead: '여행지와 날짜만 고르면 챙길 것이 정리돼요. 친구와 같이 챙기고, 입국 준비와 환율까지 한곳에서.',
+      ios: 'App Store 준비 중',
+      featuresTitle: 'EasyPack 으로 할 수 있는 것',
+      regions: '<strong>한국 · 일본 · 대만</strong>에서 한국어 · 일본어 · 번체 중국어로 쓸 수 있어요.',
+      features: [
+        ['🧳', '여행지 맞춤 체크리스트', '카테고리를 고르면 준비물이 채워지고, 개수 · 메모 · "사야 해요" 표시까지.'],
+        ['👥', '같이 챙기기', '링크 하나로 친구를 초대해요. 각자 챙길 것과 같이 챙길 것을 나누고 담당자를 정해요.'],
+        ['🛂', '입국 준비 · 환율 · 날씨', '비자 · 입국 신고 같은 여행지 준비 사항과 환율 추이, 날씨를 한눈에.'],
+        ['📋', '템플릿', '자주 가는 여행의 준비물을 템플릿으로 저장하고 다음 여행에 바로 써요.'],
+        ['💬', '커뮤니티', '다른 여행자의 준비물 목록을 보고 내 템플릿으로 가져올 수 있어요.'],
+        ['🔗', '링크로 공유', '내 준비물 목록을 링크로 보내면 받은 사람이 바로 저장해요.']
+      ]
+    },
+    ja: {
+      title: '旅の持ち物、もう忘れない',
+      lead: '行き先と日程を選ぶだけで持ち物を整理。友だちと一緒に準備して、入国準備や為替もまとめてチェック。',
+      ios: 'App Store 準備中',
+      featuresTitle: 'EasyPack でできること',
+      regions: '<strong>日本 · 韓国 · 台湾</strong>で、日本語 · 韓国語 · 繁体字中国語に対応しています。',
+      features: [
+        ['🧳', '行き先に合わせたチェックリスト', 'カテゴリを選ぶと持ち物が入り、個数 · メモ · 「買うもの」マークも。'],
+        ['👥', '一緒に準備', 'リンクひとつで友だちを招待。各自の持ち物とみんなで用意するものを分けて、担当を決めます。'],
+        ['🛂', '入国準備 · 為替 · 天気', 'ビザや入国手続きなどの準備事項、為替の推移、天気をひと目で。'],
+        ['📋', 'テンプレート', 'よく行く旅の持ち物をテンプレートに保存して、次の旅ですぐ使えます。'],
+        ['💬', 'コミュニティ', 'ほかの旅行者の持ち物リストを見て、自分のテンプレートに取り込めます。'],
+        ['🔗', 'リンクで共有', '持ち物リストをリンクで送ると、受け取った人がそのまま保存できます。']
+      ]
+    },
+    zhHant: {
+      title: '旅行行李，不再漏帶',
+      lead: '選好目的地和日期，該帶的東西就整理好了。和朋友一起準備，入境準備和匯率也一次看。',
+      ios: 'App Store 準備中',
+      featuresTitle: 'EasyPack 能做什麼',
+      regions: '支援 <strong>台灣 · 日本 · 韓國</strong>，提供繁體中文 · 日文 · 韓文。',
+      features: [
+        ['🧳', '依目的地整理的清單', '選好分類就自動填入行李，還能設定數量 · 備註 ·「要買」標記。'],
+        ['👥', '一起準備', '用一個連結邀請朋友，分好各自帶和一起帶的東西，並指定負責人。'],
+        ['🛂', '入境準備 · 匯率 · 天氣', '簽證、入境申報等準備事項，加上匯率走勢和天氣，一目了然。'],
+        ['📋', '範本', '把常去旅行的行李存成範本，下次旅行直接使用。'],
+        ['💬', '社群', '看看其他旅人的行李清單，存成自己的範本。'],
+        ['🔗', '用連結分享', '把行李清單用連結傳出去，對方可以直接儲存。']
+      ]
+    },
+    en: {
+      title: 'Never forget a thing on your trip',
+      lead: 'Pick a destination and dates, and your packing list is ready. Pack together with friends, and check entry requirements and exchange rates in one place.',
+      ios: 'App Store coming soon',
+      featuresTitle: 'What you can do with EasyPack',
+      regions: 'Available in <strong>Korea · Japan · Taiwan</strong> in Korean, Japanese and Traditional Chinese.',
+      features: [
+        ['🧳', 'Checklists for your destination', 'Pick categories and items fill in, with quantities, notes and a "to buy" mark.'],
+        ['👥', 'Pack together', 'Invite friends with a link, split what each person brings and assign who brings shared items.'],
+        ['🛂', 'Entry info · exchange rates · weather', 'Visa and arrival requirements, exchange rate trends and weather at a glance.'],
+        ['📋', 'Templates', 'Save lists for trips you take often and reuse them next time.'],
+        ['💬', 'Community', 'Browse other travelers\' packing lists and save them as your own templates.'],
+        ['🔗', 'Share by link', 'Send your list as a link and friends can save it right away.']
+      ]
+    }
+  };
+
+  function detect() {
+    var l = (navigator.language || 'ko').toLowerCase();
+    if (l.indexOf('ja') === 0) return 'ja';
+    if (l.indexOf('zh') === 0) return 'zhHant';
+    if (l.indexOf('ko') === 0) return 'ko';
+    return 'en';
+  }
+
+  function render(lang) {
+    var t = TEXTS[lang];
+    document.documentElement.lang = lang === 'zhHant' ? 'zh-Hant' : lang;
+    var nodes = document.querySelectorAll('[data-t]');
+    for (var i = 0; i < nodes.length; i++) {
+      var key = nodes[i].getAttribute('data-t');
+      nodes[i].innerHTML = t[key];
+    }
+    var grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    t.features.forEach(function (f) {
+      var card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = '<div class="em">' + f[0] + '</div><h3></h3><p></p>';
+      card.querySelector('h3').textContent = f[1];
+      card.querySelector('p').textContent = f[2];
+      grid.appendChild(card);
+    });
+    var buttons = document.querySelectorAll('#langs button');
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].classList.toggle('on', buttons[j].getAttribute('data-lang') === lang);
+    }
+  }
+
+  document.getElementById('langs').addEventListener('click', function (e) {
+    var lang = e.target.getAttribute && e.target.getAttribute('data-lang');
+    if (lang) render(lang);
+  });
+  render(detect());
+</script>
+</body>
+</html>
