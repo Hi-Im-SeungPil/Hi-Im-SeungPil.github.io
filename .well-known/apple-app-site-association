@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.com.jeonfeel.easypack"],
+        "appIDs": ["7X99JUFRTG.com.jeonfeel.easypack"],
         "components": [
           { "/": "/l", "comment": "준비물 공유 링크 (?c=코드)" },
           { "/": "/j", "comment": "같이 챙기기 초대 링크 (?c=코드)" }
