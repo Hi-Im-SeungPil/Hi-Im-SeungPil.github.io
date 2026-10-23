@@ -67,11 +67,11 @@
       <tr><td>닉네임</td><td>직접 입력할 때</td><td>같이 챙기기 · 커뮤니티에서 이름 표시</td></tr>
       <tr><td>이용자가 만든 내용: 체크리스트 (여행 이름 · 여행지 · 날짜 · 준비물 · 메모), 템플릿, 같이 챙기기 멤버 · 담당자 · 항목 한마디, 공유 링크, 커뮤니티 글 · 댓글 · 좋아요 · 저장 · 신고 · 차단</td><td>이용 중</td><td>서비스 제공</td></tr>
       <tr><td>기기 · 설정 정보: 푸시 알림 토큰, 앱 언어, 사는 나라 설정, 알림 설정</td><td>이용 중</td><td>알림 보내기, 언어 · 나라에 맞는 내용 제공</td></tr>
-      <tr><td>이용 기록: 화면 · 기능 사용 기록, 앱 버전, 기기 종류 · OS, 대략적인 지역 (국가 · 도시 수준, IP 주소로 추정), 광고 식별자 (Android 광고 ID)</td><td>이용 중 (Firebase Analytics)</td><td>서비스 개선, 오류 파악, 연령대 · 성별 통계</td></tr>
+      <tr><td>이용 기록: 화면 · 기능 사용 기록, 앱 버전, 기기 종류 · OS, 대략적인 지역 (국가 · 도시 수준, IP 주소로 추정), 광고 식별자 (Android 광고 ID, iPhone 은 "앱 추적 허용"을 허락한 경우의 IDFA)</td><td>이용 중 (Firebase Analytics)</td><td>서비스 개선, 오류 파악, 연령대 · 성별 통계</td></tr>
       <tr><td>문의 메일: 이메일 주소, 보낸 내용, 메일에 미리 채워진 앱 버전 · 기기 · 언어</td><td>문의할 때</td><td>답변, 오류 해결</td></tr>
     </table></div>
     <p>수집하지 않는 정보: 정확한 위치(GPS), 연락처, 사진 · 파일(체크리스트 이미지를 저장할 때는 사진첩에 저장만 하고 읽지 않습니다).</p>
-    <p>광고 식별자는 Google Analytics 가 연령대 · 성별 · 관심사 같은 전체 통계를 내는 데에만 쓰이며, 맞춤 광고에는 쓰지 않습니다. 폰 설정의 광고 메뉴(기기에 따라 "개인정보 보호 → 광고" 또는 "Google → 광고")에서 광고 ID 를 삭제하거나 재설정할 수 있습니다.</p>
+    <p>광고 식별자는 Google Analytics 가 연령대 · 성별 · 관심사 같은 전체 통계를 내는 데에만 쓰이며, 맞춤 광고에는 쓰지 않습니다. 폰 설정의 광고 메뉴(기기에 따라 "개인정보 보호 → 광고" 또는 "Google → 광고")에서 광고 ID 를 삭제하거나 재설정할 수 있습니다. iPhone 에서는 앱이 처음 물을 때 허용한 경우에만 수집하며, 설정 → 개인정보 보호 및 보안 → 추적에서 언제든 끌 수 있습니다.</p>
 
     <h2>2. 보유 기간과 파기</h2>
     <ul>
@@ -139,11 +139,11 @@
       <tr><td>ニックネーム</td><td>入力時</td><td>一緒に準備・コミュニティでの名前表示</td></tr>
       <tr><td>利用者が作成した内容：チェックリスト（旅行名・行き先・日付・持ち物・メモ）、テンプレート、一緒に準備のメンバー・担当者・ひとこと、共有リンク、コミュニティの投稿・コメント・いいね・保存・通報・ブロック</td><td>利用中</td><td>サービスの提供</td></tr>
       <tr><td>端末・設定情報：プッシュ通知トークン、アプリの言語、居住国の設定、通知設定</td><td>利用中</td><td>通知の送信、言語・国に合わせた内容の提供</td></tr>
-      <tr><td>利用記録：画面・機能の利用記録、アプリのバージョン、端末の種類・OS、おおよその地域（国・都市単位、IPアドレスから推定）、広告識別子（Android の広告ID）</td><td>利用中（Firebase Analytics）</td><td>サービス改善、不具合の把握、年代・性別の統計</td></tr>
+      <tr><td>利用記録：画面・機能の利用記録、アプリのバージョン、端末の種類・OS、おおよその地域（国・都市単位、IPアドレスから推定）、広告識別子（Android の広告ID、iPhone は「Appからのトラッキング要求」を許可した場合の IDFA）</td><td>利用中（Firebase Analytics）</td><td>サービス改善、不具合の把握、年代・性別の統計</td></tr>
       <tr><td>お問い合わせメール：メールアドレス、送信内容、メールにあらかじめ入るアプリのバージョン・端末・言語</td><td>お問い合わせ時</td><td>回答、不具合の解決</td></tr>
     </table></div>
     <p>取得しない情報：正確な位置情報（GPS）、連絡先、写真・ファイル（チェックリスト画像の保存時は写真アプリに保存するだけで、読み取りません）。</p>
-    <p>広告識別子は、Google アナリティクスが年代・性別・興味関心などの全体統計を出すためだけに使われ、パーソナライズド広告には使いません。端末の設定の広告メニュー（機種により「プライバシー → 広告」または「Google → 広告」）で広告IDを削除・リセットできます。</p>
+    <p>広告識別子は、Google アナリティクスが年代・性別・興味関心などの全体統計を出すためだけに使われ、パーソナライズド広告には使いません。端末の設定の広告メニュー（機種により「プライバシー → 広告」または「Google → 広告」）で広告IDを削除・リセットできます。iPhone では、アプリが最初に尋ねたときに許可した場合にのみ取得し、設定 → プライバシーとセキュリティ → トラッキングでいつでもオフにできます。</p>
 
     <h2>2. 保存期間と削除</h2>
     <ul>
@@ -210,11 +210,11 @@
       <tr><td>暱稱</td><td>自行輸入時</td><td>在一起準備、社群中顯示名稱</td></tr>
       <tr><td>使用者建立的內容：清單（旅行名稱、目的地、日期、行李、備註）、範本、一起準備的成員、負責人、項目留言、分享連結、社群貼文、留言、按讚、收藏、檢舉、封鎖</td><td>使用期間</td><td>提供服務</td></tr>
       <tr><td>裝置與設定資料：推播通知權杖、App 語言、居住國家設定、通知設定</td><td>使用期間</td><td>傳送通知、依語言與國家提供內容</td></tr>
-      <tr><td>使用紀錄：畫面與功能使用紀錄、App 版本、裝置型號與作業系統、大致地區（國家、城市層級，依 IP 位址推估）、廣告識別碼（Android 廣告 ID）</td><td>使用期間（Firebase Analytics）</td><td>改善服務、找出錯誤、年齡層與性別統計</td></tr>
+      <tr><td>使用紀錄：畫面與功能使用紀錄、App 版本、裝置型號與作業系統、大致地區（國家、城市層級，依 IP 位址推估）、廣告識別碼（Android 廣告 ID；iPhone 為允許「App 追蹤」時的 IDFA）</td><td>使用期間（Firebase Analytics）</td><td>改善服務、找出錯誤、年齡層與性別統計</td></tr>
       <tr><td>來信詢問：電子郵件地址、來信內容、信中預先填入的 App 版本、裝置與語言</td><td>詢問時</td><td>回覆、解決問題</td></tr>
     </table></div>
     <p>不蒐集的資料：精確位置（GPS）、聯絡人、照片與檔案（儲存清單圖片時只會存入相簿，不會讀取）。</p>
-    <p>廣告識別碼只會由 Google Analytics 用來產生年齡層、性別、興趣等整體統計，不會用於個人化廣告。可在手機設定的廣告選單（依機型為「隱私權 → 廣告」或「Google → 廣告」）刪除或重設廣告 ID。</p>
+    <p>廣告識別碼只會由 Google Analytics 用來產生年齡層、性別、興趣等整體統計，不會用於個人化廣告。可在手機設定的廣告選單（依機型為「隱私權 → 廣告」或「Google → 廣告」）刪除或重設廣告 ID。iPhone 只有在 App 第一次詢問時選擇允許才會蒐集，並可隨時在「設定 → 隱私權與安全性 → 追蹤」關閉。</p>
 
     <h2>2. 保存期間與刪除</h2>
     <ul>
@@ -281,11 +281,11 @@
       <tr><td>Nickname</td><td>When you enter it</td><td>Showing your name in shared lists and the community</td></tr>
       <tr><td>Content you create: checklists (trip name, destination, dates, items, notes), templates, shared-list members, assignees and item notes, share links, community posts, comments, likes, saves, reports and blocks</td><td>While using the App</td><td>Providing the service</td></tr>
       <tr><td>Device and settings: push notification token, app language, home country setting, notification settings</td><td>While using the App</td><td>Sending notifications, showing content for your language and country</td></tr>
-      <tr><td>Usage data: screens and features used, app version, device model and OS, approximate region (country or city level, estimated from IP address), advertising identifier (Android advertising ID)</td><td>While using the App (Firebase Analytics)</td><td>Improving the service, finding bugs, age and gender statistics</td></tr>
+      <tr><td>Usage data: screens and features used, app version, device model and OS, approximate region (country or city level, estimated from IP address), advertising identifier (Android advertising ID; on iPhone, the IDFA only if you allow app tracking)</td><td>While using the App (Firebase Analytics)</td><td>Improving the service, finding bugs, age and gender statistics</td></tr>
       <tr><td>Support email: your email address, your message, and the app version, device and language pre-filled in the email</td><td>When you contact us</td><td>Replying and fixing problems</td></tr>
     </table></div>
     <p>We do not collect: precise location (GPS), contacts, photos or files (when you save a checklist image, the App only writes it to your photo library and never reads it).</p>
-    <p>The advertising identifier is used only by Google Analytics to produce aggregate statistics such as age range, gender and interests. It is not used for personalized ads. You can delete or reset it in your phone's ad settings ("Privacy → Ads" or "Google → Ads", depending on the device).</p>
+    <p>The advertising identifier is used only by Google Analytics to produce aggregate statistics such as age range, gender and interests. It is not used for personalized ads. You can delete or reset it in your phone's ad settings ("Privacy → Ads" or "Google → Ads", depending on the device). On iPhone it is collected only if you allow it when the App first asks, and you can turn it off at any time in Settings → Privacy & Security → Tracking.</p>
 
     <h2>2. Retention and deletion</h2>
     <ul>
