@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Packtori 계정 삭제 · Delete account</title>
+  <meta name="theme-color" content="#2F6FE0">
+  <!-- 글꼴: 본문은 Pretendard(한글 · 영문), 로고 글자는 둥근 Nunito. 윈도우에 없는 글꼴만 적으면 한글이 바탕체로 보였다. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    :root { --primary: #2F6FE0; --text: #191F28; --sub: #6B7684; --line: #E5E8EB; --bg-alt: #F7F8FA; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      color: var(--text); background: #fff; line-height: 1.7; -webkit-font-smoothing: antialiased;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Hiragino Sans", "Yu Gothic UI", Meiryo, "PingFang TC", "Microsoft JhengHei", "Noto Sans KR", "Noto Sans JP", "Noto Sans TC", "Segoe UI", Roboto, sans-serif;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 48px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; flex-wrap: wrap; }
+    .brand { font-family: Nunito, "Pretendard Variable", Pretendard, sans-serif; letter-spacing: -0.01em; font-weight: 800; font-size: 18px; color: var(--primary); text-decoration: none; }
+    .langs { display: flex; gap: 4px; flex-wrap: wrap; }
+    .langs button { border: 0; background: transparent; color: var(--sub); font: inherit; font-size: 13px;
+      padding: 6px 8px; border-radius: 8px; cursor: pointer; }
+    .langs button.on { background: var(--bg-alt); color: var(--text); font-weight: 700; }
+    h1 { font-size: 26px; margin: 16px 0 16px; }
+    h2 { font-size: 18px; margin: 32px 0 10px; }
+    p, li { font-size: 15px; }
+    ol, ul { padding-left: 22px; }
+    .box { background: var(--bg-alt); border-radius: 14px; padding: 14px 18px; }
+    a { color: var(--primary); }
+    .doc { display: none; }
+    .doc.on { display: block; }
+    footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 20px; color: var(--sub); font-size: 13px; }
+    footer a { margin-right: 12px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="packtori">Packtori</a>
+    <div class="langs" id="langs">
+      <button data-lang="ko">한국어</button>
+      <button data-lang="ja">日本語</button>
+      <button data-lang="zhHant">繁中</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <!-- ===== 한국어 ===== -->
+  <article class="doc" data-lang="ko" lang="ko">
+    <h1>Packtori 계정 삭제 안내</h1>
+    <h2>앱에서 바로 삭제하기</h2>
+    <ol>
+      <li>Packtori 앱을 엽니다.</li>
+      <li>아래 <strong>계정</strong> 탭으로 갑니다.</li>
+      <li>맨 아래 <strong>계정 탈퇴</strong>를 누르고 확인합니다.</li>
+    </ol>
+    <h2>메일로 요청하기</h2>
+    <p class="box">앱을 지웠거나 앱에서 삭제할 수 없다면 <a href="mailto:packtori.help@gmail.com?subject=Packtori%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%9A%94%EC%B2%AD">packtori.help@gmail.com</a>으로 제목 "계정 삭제 요청", 로그인한 방법(구글 · 애플 · 카카오)과 닉네임을 적어 보내 주세요. 본인 확인 후 7일 안에 삭제하고 알려드립니다.</p>
+    <h2>삭제되는 데이터</h2>
+    <ul>
+      <li>계정 · 로그인 연결 정보 · 닉네임</li>
+      <li>체크리스트 · 템플릿 · 공유 링크 · 같이 챙기기 참여</li>
+      <li>커뮤니티 글 · 댓글 · 좋아요 · 저장 · 신고 · 차단</li>
+      <li>알림 · 푸시 알림 토큰 · 설정</li>
+    </ul>
+    <h2>남는 데이터</h2>
+    <ul>
+      <li>서버 백업: 최대 7일 뒤 완전히 지워집니다.</li>
+      <li>같이 챙기던 목록에서 다른 멤버가 만든 내용: 그 멤버의 것이라 남습니다(삭제한 이용자의 이름은 표시되지 않습니다).</li>
+      <li>이용 기록(Firebase Analytics): 계정과 연결되지 않은 형태로 최대 14개월 뒤 삭제됩니다.</li>
+      <li>기기에 저장된 데이터는 앱을 지우면 삭제됩니다.</li>
+    </ul>
+    <p>자세한 내용은 <a href="packtori-privacy">개인정보처리방침</a>을 보세요.</p>
+  </article>
+
+  <!-- ===== 日本語 ===== -->
+  <article class="doc" data-lang="ja" lang="ja">
+    <h1>Packtori アカウント削除のご案内</h1>
+    <h2>アプリから削除する</h2>
+    <ol>
+      <li>Packtori アプリを開きます。</li>
+      <li>下の<strong>アカウント</strong>タブを開きます。</li>
+      <li>いちばん下の<strong>アカウントを削除</strong>をタップして確認します。</li>
+    </ol>
+    <h2>メールで依頼する</h2>
+    <p class="box">アプリを削除した場合やアプリから削除できない場合は、<a href="mailto:packtori.help@gmail.com?subject=Packtori%20Account%20deletion%20request">packtori.help@gmail.com</a> に件名「アカウント削除の依頼」で、ログイン方法（Google・Apple・Kakao）とニックネームを書いてお送りください。本人確認のうえ、7日以内に削除してお知らせします。</p>
+    <h2>削除されるデータ</h2>
+    <ul>
+      <li>アカウント・ログイン連携情報・ニックネーム</li>
+      <li>チェックリスト・テンプレート・共有リンク・一緒に準備への参加</li>
+      <li>コミュニティの投稿・コメント・いいね・保存・通報・ブロック</li>
+      <li>通知・プッシュ通知トークン・設定</li>
+    </ul>
+    <h2>残るデータ</h2>
+    <ul>
+      <li>サーバーのバックアップ：最大7日後に完全に削除されます。</li>
+      <li>一緒に準備したリストのうち、ほかのメンバーが作成した内容：そのメンバーのものとして残ります（削除した利用者の名前は表示されません）。</li>
+      <li>利用記録（Firebase Analytics）：アカウントと結びつかない形で、最大14か月後に削除されます。</li>
+      <li>端末に保存されたデータは、アプリを削除すると消えます。</li>
+    </ul>
+    <p>詳しくは<a href="packtori-privacy">プライバシーポリシー</a>をご覧ください。</p>
+  </article>
+
+  <!-- ===== 繁體中文 ===== -->
+  <article class="doc" data-lang="zhHant" lang="zh-Hant">
+    <h1>Packtori 刪除帳號說明</h1>
+    <h2>在 App 中刪除</h2>
+    <ol>
+      <li>開啟 Packtori App。</li>
+      <li>前往下方的<strong>帳號</strong>分頁。</li>
+      <li>點最下方的<strong>刪除帳號</strong>並確認。</li>
+    </ol>
+    <h2>以電子郵件申請</h2>
+    <p class="box">如果已移除 App 或無法在 App 中刪除，請寄信到 <a href="mailto:packtori.help@gmail.com?subject=Packtori%20Account%20deletion%20request">packtori.help@gmail.com</a>，主旨寫「刪除帳號申請」，並註明登入方式（Google、Apple、Kakao）與暱稱。確認身分後，我們會在 7 天內刪除並通知您。</p>
+    <h2>會被刪除的資料</h2>
+    <ul>
+      <li>帳號、登入連結資料、暱稱</li>
+      <li>清單、範本、分享連結、一起準備的參與紀錄</li>
+      <li>社群貼文、留言、按讚、收藏、檢舉、封鎖</li>
+      <li>通知、推播通知權杖、設定</li>
+    </ul>
+    <h2>會保留的資料</h2>
+    <ul>
+      <li>伺服器備份：最多 7 天後完全刪除。</li>
+      <li>一起準備的清單中其他成員建立的內容：屬於該成員而會保留（不會顯示已刪除使用者的名稱）。</li>
+      <li>使用紀錄（Firebase Analytics）：以不與帳號連結的形式，最多 14 個月後刪除。</li>
+      <li>儲存在裝置上的資料會在移除 App 時刪除。</li>
+    </ul>
+    <p>詳細內容請參考<a href="packtori-privacy">隱私權政策</a>。</p>
+  </article>
+
+  <!-- ===== English ===== -->
+  <article class="doc" data-lang="en" lang="en">
+    <h1>How to delete your Packtori account</h1>
+    <h2>Delete in the app</h2>
+    <ol>
+      <li>Open the Packtori app.</li>
+      <li>Go to the <strong>Account</strong> tab at the bottom.</li>
+      <li>Tap <strong>Delete account</strong> at the bottom and confirm.</li>
+    </ol>
+    <h2>Request by email</h2>
+    <p class="box">If you have uninstalled the app or cannot delete it there, email <a href="mailto:packtori.help@gmail.com?subject=Packtori%20Account%20deletion%20request">packtori.help@gmail.com</a> with the subject "Account deletion request", the sign-in method you used (Google, Apple or Kakao) and your nickname. After verifying it is you, we will delete the account within 7 days and let you know.</p>
+    <h2>Data that is deleted</h2>
+    <ul>
+      <li>Account, linked sign-in information, nickname</li>
+      <li>Checklists, templates, share links, shared-list membership</li>
+      <li>Community posts, comments, likes, saves, reports, blocks</li>
+      <li>Notifications, push notification token, settings</li>
+    </ul>
+    <h2>Data that remains</h2>
+    <ul>
+      <li>Server backups: fully erased within 7 days.</li>
+      <li>Content other members created in shared lists: it belongs to them and stays (your name is no longer shown).</li>
+      <li>Usage data (Firebase Analytics): not linked to your account, deleted after up to 14 months.</li>
+      <li>Data on your device is removed when you uninstall the app.</li>
+    </ul>
+    <p>See the <a href="packtori-privacy">Privacy Policy</a> for details.</p>
+  </article>
+
+  <footer>
+    <a href="packtori-privacy">Privacy</a>
+    <a href="packtori-terms">Terms</a>
+    <a href="packtori-delete">Delete account</a>
+    <a href="mailto:packtori.help@gmail.com">packtori.help@gmail.com</a>
+  </footer>
+</div>
+<script>
+  (function () {
+    var docs = document.querySelectorAll('.doc');
+    var buttons = document.querySelectorAll('#langs button');
+    function show(lang) {
+      docs.forEach(function (d) { d.classList.toggle('on', d.dataset.lang === lang); });
+      buttons.forEach(function (b) { b.classList.toggle('on', b.dataset.lang === lang); });
+      document.documentElement.lang = lang === 'zhHant' ? 'zh-Hant' : lang;
+    }
+    function initial() {
+      var q = new URLSearchParams(location.search).get('lang');
+      if (q) {
+        if (q.indexOf('zh') === 0) return 'zhHant';
+        if (['ko', 'ja', 'en'].indexOf(q) >= 0) return q;
+      }
+      var n = (navigator.language || 'ko').toLowerCase();
+      if (n.indexOf('ja') === 0) return 'ja';
+      if (n.indexOf('zh') === 0) return 'zhHant';
+      if (n.indexOf('ko') === 0) return 'ko';
+      return 'en';
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.lang); }); });
+    show(initial());
+  })();
+</script>
+</body>
+</html>
