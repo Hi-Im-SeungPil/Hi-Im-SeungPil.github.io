@@ -43,7 +43,7 @@
     .store { display: inline-flex; align-items: center; gap: 8px; height: 52px; padding: 0 22px; border-radius: 14px;
       font-weight: 700; font-size: 15px; text-decoration: none; }
     .store.play { background: var(--text); color: #fff; }
-    .store.ios { background: var(--bg-alt); color: var(--sub); pointer-events: none; }
+    .store.ios { background: var(--text); color: #fff; }
     .features { background: var(--bg-alt); padding: 56px 0; }
     .features h2 { text-align: center; font-size: 22px; margin: 0 0 28px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
@@ -91,7 +91,10 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4 2.8v18.4c0 .5.5.8.9.5l15.4-9.2a.6.6 0 0 0 0-1L4.9 2.3c-.4-.3-.9 0-.9.5z"/></svg>
           Google Play
         </a>
-        <span class="store ios" data-t="ios"></span>
+        <a class="store ios" id="appstore" href="https://apps.apple.com/app/id6826110056">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+          App Store
+        </a>
       </div>
     </section>
   </div>
@@ -119,7 +122,6 @@
     ko: {
       title: '여행 준비물, 빠뜨리지 않게',
       lead: '여행지와 날짜만 고르면 챙길 것이 정리돼요. 친구와 같이 챙기고, 입국 준비와 환율까지 한곳에서.',
-      ios: 'App Store 준비 중',
       featuresTitle: '팩토리로 할 수 있는 것',
       regions: '<strong>한국 · 일본 · 대만</strong>에서 한국어 · 일본어 · 번체 중국어로 쓸 수 있어요.',
       features: [
@@ -134,7 +136,6 @@
     ja: {
       title: '旅の持ち物、もう忘れない',
       lead: '行き先と日程を選ぶだけで持ち物を整理。友だちと一緒に準備して、入国準備や為替もまとめてチェック。',
-      ios: 'App Store 準備中',
       featuresTitle: 'パックトリでできること',
       regions: '<strong>日本 · 韓国 · 台湾</strong>で、日本語 · 韓国語 · 繁体字中国語に対応しています。',
       features: [
@@ -149,7 +150,6 @@
     zhHant: {
       title: '旅行行李，不再漏帶',
       lead: '選好目的地和日期，該帶的東西就整理好了。和朋友一起準備，入境準備和匯率也一次看。',
-      ios: 'App Store 準備中',
       featuresTitle: 'Packtori 能做什麼',
       regions: '支援 <strong>台灣 · 日本 · 韓國</strong>，提供繁體中文 · 日文 · 韓文。',
       features: [
@@ -164,7 +164,6 @@
     en: {
       title: 'Never forget a thing on your trip',
       lead: 'Pick a destination and dates, and your packing list is ready. Pack together with friends, and check entry requirements and exchange rates in one place.',
-      ios: 'App Store coming soon',
       featuresTitle: 'What you can do with Packtori',
       regions: 'Available in <strong>Korea · Japan · Taiwan</strong> in Korean, Japanese and Traditional Chinese.',
       features: [
