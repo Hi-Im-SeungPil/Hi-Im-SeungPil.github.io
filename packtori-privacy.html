@@ -80,7 +80,7 @@
       <li>계정을 삭제하면 그 계정의 정보와 만든 내용(체크리스트 · 일정 · 템플릿 · 커뮤니티 글과 댓글 등)을 바로 삭제합니다. 서버 백업에는 최대 7일 동안 남았다가 지워집니다.</li>
       <li>같이 챙기던 목록에서 다른 멤버가 만든 내용은 그 멤버의 것이라 남으며, 삭제한 이용자의 이름은 더 이상 표시되지 않습니다.</li>
       <li>같이 쓴 돈 · 회비 · 변경 기록은 다른 멤버의 정산에 필요해 그 여행에 남으며, 삭제한 이용자의 이름은 더 이상 표시되지 않습니다. 나만 쓴 돈과 개인 예산은 여행에서 나가거나 계정을 삭제하면 서버에서 삭제합니다.</li>
-      <li>알림은 30일 뒤, 준비물 · 일정 공유 링크는 만들고 1시간 뒤, 같이 챙기기 초대 코드는 만료되면 삭제합니다. 같이 챙긴 여행은 도착일 3일 뒤 각자의 목록으로 정리되고, 활동 기록 · 항목 한마디 · 초대는 삭제됩니다.</li>
+      <li>알림은 30일 뒤, 준비물 · 일정 공유 링크는 만들고 1시간 뒤, 같이 챙기기 초대 코드는 만료되면 삭제합니다. 같이 챙긴 여행은 도착일 3일 뒤(같이 쓴 돈 · 회비가 있으면 7일 뒤) 각자의 목록으로 정리되어 경비는 방장의 목록에만 남고, 활동 기록 · 항목 한마디 · 초대는 삭제됩니다.</li>
       <li>이용 기록(Firebase Analytics)은 최대 14개월 보관 후 삭제됩니다.</li>
       <li>문의 메일은 처리가 끝난 뒤 1년 안에 삭제합니다.</li>
       <li>기기에 저장된 데이터는 앱을 지우면 함께 삭제됩니다. 서버의 데이터는 복구할 수 없는 방법으로 삭제합니다.</li>
@@ -156,7 +156,7 @@
       <li>アカウントを削除すると、そのアカウントの情報と作成した内容（チェックリスト・旅程・テンプレート・コミュニティの投稿とコメントなど）をすぐに削除します。サーバーのバックアップには最大7日間残った後、削除されます。</li>
       <li>一緒に準備したリストのうち、ほかのメンバーが作成した内容はそのメンバーのものとして残り、削除した利用者の名前は表示されなくなります。</li>
       <li>みんなで使ったお金・共通費・変更履歴は、ほかのメンバーの精算に必要なためその旅行に残り、削除した利用者の名前は表示されなくなります。自分だけの支出と個人の予算は、旅行から抜けるかアカウントを削除するとサーバーから削除します。</li>
-      <li>通知は30日後、持ち物・旅程の共有リンクは作成から1時間後、一緒に準備の招待コードは期限切れ後に削除します。一緒に準備した旅行は到着日の3日後に各自のリストへ整理され、活動記録・ひとこと・招待は削除されます。</li>
+      <li>通知は30日後、持ち物・旅程の共有リンクは作成から1時間後、一緒に準備の招待コードは期限切れ後に削除します。一緒に準備した旅行は到着日の3日後（みんなで使ったお金・共通費がある場合は7日後）に各自のリストへ整理され、費用はオーナーのリストにのみ残り、活動記録・ひとこと・招待は削除されます。</li>
       <li>利用記録（Firebase Analytics）は最大14か月保存した後、削除されます。</li>
       <li>お問い合わせメールは、対応完了後1年以内に削除します。</li>
       <li>端末に保存されたデータは、アプリを削除すると一緒に消えます。サーバーのデータは復元できない方法で削除します。</li>
@@ -231,7 +231,7 @@
       <li>刪除帳號後，會立即刪除該帳號的資料與建立的內容（清單、行程、範本、社群貼文與留言等）。伺服器備份最多保留 7 天後刪除。</li>
       <li>在一起準備的清單中，其他成員建立的內容屬於該成員而會保留，已刪除帳號的使用者名稱將不再顯示。</li>
       <li>共同花費、公款與變更紀錄因其他成員分帳需要而保留在該旅行中，已刪除帳號的使用者名稱將不再顯示。個人花費與個人預算會在退出旅行或刪除帳號時從伺服器刪除。</li>
-      <li>通知於 30 天後、行李與行程分享連結於建立 1 小時後、一起準備的邀請碼於到期後刪除。一起準備的旅行會在抵達日 3 天後整理為各自的清單，活動紀錄、項目留言與邀請將被刪除。</li>
+      <li>通知於 30 天後、行李與行程分享連結於建立 1 小時後、一起準備的邀請碼於到期後刪除。一起準備的旅行會在抵達日 3 天後（有共同花費或公款時為 7 天後）整理為各自的清單，花費只保留在建立者的清單中，活動紀錄、項目留言與邀請將被刪除。</li>
       <li>使用紀錄（Firebase Analytics）最多保存 14 個月後刪除。</li>
       <li>來信詢問在處理完畢後 1 年內刪除。</li>
       <li>儲存在裝置上的資料會在刪除 App 時一併刪除。伺服器上的資料以無法復原的方式刪除。</li>
@@ -306,7 +306,7 @@
       <li>When you delete your account, we immediately delete its information and the content you created (checklists, itineraries, templates, community posts and comments, and so on). Server backups keep it for up to 7 days before it is erased.</li>
       <li>In shared lists, content created by other members belongs to them and stays; your name is no longer shown.</li>
       <li>Shared expenses, the group fund and the change history stay with the trip because other members need them to settle; your name is no longer shown. Personal expenses and personal budgets are deleted from the server when you leave the trip or delete your account.</li>
-      <li>Notifications are deleted after 30 days, checklist and itinerary share links 1 hour after they are created, and invite codes when they expire. Shared trips are split into each member's own list 3 days after the return date, and activity history, item notes and invites are deleted.</li>
+      <li>Notifications are deleted after 30 days, checklist and itinerary share links 1 hour after they are created, and invite codes when they expire. Shared trips are split into each member's own list 3 days after the return date (7 days if there are shared expenses or a group fund), expenses stay only in the owner's list, and activity history, item notes and invites are deleted.</li>
       <li>Usage data (Firebase Analytics) is kept for up to 14 months and then deleted.</li>
       <li>Support emails are deleted within 1 year after the request is resolved.</li>
       <li>Data stored on your device is removed when you uninstall the App. Server data is deleted so that it cannot be recovered.</li>
