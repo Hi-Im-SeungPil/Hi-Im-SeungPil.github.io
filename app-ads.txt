@@ -1,6 +1,9 @@
 # AdMob
 google.com, pub-8481465476603755, DIRECT, f08c47fec0942fa0
 
+# Meta
+facebook.com, 4735171453474114, DIRECT, c3e20eee3f780d68
+
 # Unity Ads
 appnexus.com, 6849, RESELLER
 appnexus.com, 11826, RESELLER, f5ab79cb980f11d1
